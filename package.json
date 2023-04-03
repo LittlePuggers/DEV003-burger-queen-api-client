@@ -1,0 +1,22 @@
+{
+  "name": "dev003-burger-queen-api-client",
+  "version": "1.0.0",
+  "description": "## Índice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LittlePuggers/DEV003-burger-queen-api-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/issues"
+  },
+  "homepage": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client#readme",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
