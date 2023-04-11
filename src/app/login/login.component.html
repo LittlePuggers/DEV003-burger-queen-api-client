@@ -1,10 +1,19 @@
 
-<form>
-    <div>
-      <input type="email" name="email" placeholder="Email">
-    </div>
-    <div>
-      <input type="password" name="password" placeholder="Password">
-    </div>
-    <button type="submit">Enter</button>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label>
+      Email:
+      <input type="text" formControlName="email">
+    </label>
+    <label>
+      Password:
+      <input type="password" formControlName="password">
+    </label>
+    <button type="submit">Enviar</button>
   </form>
+
+
+ <!-- <form #myButton="ngForm">
+    <input type="text" name="username" ngModel>
+    <input type="password" name="password" ngModel>
+    <button type="submit">Enviar</button>
+  </form> -->
