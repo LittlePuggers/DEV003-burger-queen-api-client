@@ -1,19 +1,27 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+  "products": [
+  {
+    "id": 1214,
+    "name": "Sandwich de jamón y queso",
+    "price": 1000,
+    "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+    "type": "Desayuno",
+    "dateEntry": "2022-03-05 15:14:10"
+  },
+  {
+    "id": 7450,
+    "name": "Café americano",
+    "price": 500,
+    "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
+    "type": "Desayuno",
+    "dateEntry": "2022-03-05 15:14:10"
   }
+],
+"auth": [
+  {
+      "email": "anita.borg@systers.xyz",
+      "password": "g6WQSrsv7rC7et5B"
+    }
+],
+  "profile": { "name": "typicode" }
 }
