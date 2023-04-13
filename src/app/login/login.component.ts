@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
   public myForm!: FormGroup;
   public submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private loginProvider: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.myForm = this.createMyForm();
   }
@@ -24,12 +26,20 @@ export class LoginComponent implements OnInit {
   public submitForm() {
     this.submitted = true;
 
-    console.log(this.myForm);
     if (this.myForm.invalid) {
-      // alert("Ingrese usuario y contraseña")
+      alert("Ingrese usuario y contraseña");
     } else {
-      alert("The form was submitted.");
-      console.log(this.myForm.value);
+      const { email, password } = this.myForm.value;
+
+      if (!this.loginProvider.login(email, password)) {
+        alert('Email o contraseña inválida');
+      } else {
+        // alert("The form was submitted.");
+        // console.log(this.myForm.value);
+        this.router.navigate(['/waiter']);
+      }
     }
   }
+
+
 }
