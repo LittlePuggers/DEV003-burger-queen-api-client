@@ -1,24 +1,52 @@
-<form [formGroup]="myForm" (ngSubmit)="submitForm(); submitted = true">
-  <div>
-    <input formControlName="email" type="email" name="email" placeholder="Email">
-    <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || submitted)">
-      <div *ngIf="myForm.get('email')?.errors?.['required']">
-        Email is required.
-      </div>
-      <div *ngIf="myForm.get('email')?.errors?.['email']">
-        The email is invalid.
-      </div>
-    </div>
-  </div>
+<main>
+  <section>
+    <div id="content">
+      <img src="../../assets/BurgerQueen.png" alt="BurgerQueen logo" />
+      <h1>Welcome!</h1>
+      <form [formGroup]="myForm" (ngSubmit)="submitForm(); submitted = true">
+        <div>
+          <input
+            formControlName="email"
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+          <div
+            *ngIf="
+              myForm.get('email')?.invalid &&
+              (myForm.get('email')?.dirty || submitted)
+            "
+          >
+            <div *ngIf="myForm.get('email')?.errors?.['required']">
+              Email is required.
+            </div>
+            <div *ngIf="myForm.get('email')?.errors?.['email']">
+              The email is invalid.
+            </div>
+          </div>
+        </div>
 
-  <div>
-    <input formControlName="password" type="password" name="password" placeholder="Password">
-    <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || submitted)">
-      <div *ngIf="myForm.get('password')?.errors?.['required']">
-        The password is required.
-      </div>
-    </div>
-  </div>
+        <div>
+          <input
+            formControlName="password"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <div
+            *ngIf="
+              myForm.get('password')?.invalid &&
+              (myForm.get('password')?.dirty || submitted)
+            "
+          >
+            <div *ngIf="myForm.get('password')?.errors?.['required']">
+              The password is required.
+            </div>
+          </div>
+        </div>
 
-  <button type="submit">Enter</button>
-</form>
+        <button type="submit">Enter</button>
+      </form>
+    </div>
+  </section>
+</main>
