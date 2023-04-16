@@ -19,8 +19,12 @@
 ],
 "auth": [
   {
-      "email": "anita.borg@systers.xyz",
-      "password": "g6WQSrsv7rC7et5B"
+      "email": "danny.mesero@bq.com",
+      "password": "123456"
+    },
+  {
+      "email": "amy.cocina@bq.com",
+      "password": "qwerty"
     }
 ],
   "profile": { "name": "typicode" }
