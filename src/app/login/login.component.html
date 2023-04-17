@@ -32,6 +32,7 @@
             type="password"
             name="password"
             placeholder="Password"
+            (input)="clearError()"
           />
           <div
             *ngIf="
@@ -43,6 +44,7 @@
               The password is required.
             </div>
           </div>
+          <div *ngIf="messageError">Try again.</div>
         </div>
 
         <button type="submit">Enter</button>

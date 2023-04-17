@@ -12,11 +12,15 @@ export class LoginComponent implements OnInit {
   public myForm!: FormGroup;
   public submitted = false;
 
+  messageError:any;
+  
+
   constructor(private fb: FormBuilder, private loginProvider: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.myForm = this.createMyForm();
   }
   private createMyForm(): FormGroup {
+    
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -24,30 +28,25 @@ export class LoginComponent implements OnInit {
   }
 
   public submitForm():void {
-    // this.submitted = true;
+    
     if(this.myForm.value === undefined) {return};
     const { email, password} = this.myForm.value;
-  
-  
 
     this.loginProvider.login(email, password).subscribe({
-      next: (res)=>{console.log(res)}, 
-      error: (err)=>{console.log(err)}})
+      next: (res)=>{
+        console.log(res.accessToken);
+        localStorage.setItem('access_token', res.accessToken);
+        this.router.navigate(['/waiter']);
+      },
+      error: (err)=>{
+        this.messageError = err;
+        console.log(this.messageError); 
+      }})
 
-    // if (this.myForm.invalid) {
-    //   alert("Ingrese usuario y contraseña");
-    // } else {
-    //   const { email, password } = this.myForm.value;
-
-    //   if (!this.loginProvider.login(email, password)) {
-    //     alert('Email o contraseña inválida');
-    //   } else {
-    //     // alert("The form was submitted.");
-    //     console.log(this.myForm.value);
-    //     this.router.navigate(['/waiter']);
-    //   }
-    // }
   }
 
+  public clearError():void {
+    this.messageError = null;
+  }
 
 }
