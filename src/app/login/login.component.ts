@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,22 +24,29 @@ export class LoginComponent implements OnInit {
   }
 
   public submitForm():void {
-    this.submitted = true;
+    // this.submitted = true;
+    if(this.myForm.value === undefined) {return};
+    const { email, password} = this.myForm.value;
+  
+  
 
+    this.loginProvider.login(email, password).subscribe({
+      next: (res)=>{console.log(res)}, 
+      error: (err)=>{console.log(err)}})
 
-    if (this.myForm.invalid) {
-      alert("Ingrese usuario y contraseña");
-    } else {
-      const { email, password } = this.myForm.value;
+    // if (this.myForm.invalid) {
+    //   alert("Ingrese usuario y contraseña");
+    // } else {
+    //   const { email, password } = this.myForm.value;
 
-      if (!this.loginProvider.login(email, password)) {
-        alert('Email o contraseña inválida');
-      } else {
-        // alert("The form was submitted.");
-        console.log(this.myForm.value);
-        this.router.navigate(['/waiter']);
-      }
-    }
+    //   if (!this.loginProvider.login(email, password)) {
+    //     alert('Email o contraseña inválida');
+    //   } else {
+    //     // alert("The form was submitted.");
+    //     console.log(this.myForm.value);
+    //     this.router.navigate(['/waiter']);
+    //   }
+    // }
   }
 
 
