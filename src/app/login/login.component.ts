@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public submitForm() {
+  public submitForm():void {
     this.submitted = true;
+
 
     if (this.myForm.invalid) {
       alert("Ingrese usuario y contraseña");
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
         alert('Email o contraseña inválida');
       } else {
         // alert("The form was submitted.");
-        // console.log(this.myForm.value);
+        console.log(this.myForm.value);
         this.router.navigate(['/waiter']);
       }
     }
