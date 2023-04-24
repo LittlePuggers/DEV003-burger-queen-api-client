@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,8 +15,11 @@ export class LoginComponent implements OnInit {
 
   messageError:any;
   
-
-  constructor(private fb: FormBuilder, private loginProvider: AuthService, private router: Router) { }
+  constructor(
+    private fb: 
+    FormBuilder, 
+    private loginProvider: AuthService, 
+    private router: Router, ) { }
   ngOnInit(): void {
     this.myForm = this.createMyForm();
   }
@@ -28,7 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   public submitForm():void {
-    
     if(this.myForm.value === undefined) {return};
     const { email, password} = this.myForm.value;
 

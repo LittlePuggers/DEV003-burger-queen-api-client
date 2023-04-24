@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterComponent } from './waiter/waiter/waiter.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientTestingModule
   ],
 
   providers: [],
