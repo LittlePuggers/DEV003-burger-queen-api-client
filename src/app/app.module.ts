@@ -8,19 +8,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterComponent } from './waiter/waiter/waiter.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WaiterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientTestingModule
   ],
 
   providers: [],
