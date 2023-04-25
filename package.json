@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/issues"
   },
-  "homepage": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client#readme",
+  "homepage": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
