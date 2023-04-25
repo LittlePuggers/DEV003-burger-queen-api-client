@@ -1,29 +1,38 @@
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AuthService } from 'src/services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import { Router } from '@angular/router';
 
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let authService = AuthService;
+  let httpMock: HttpTestingController;
+  // let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [HttpClientTestingModule, ReactiveFormsModule],
+      imports: [HttpClientTestingModule, ReactiveFormsModule, 
+        // Router, RouterTestingModule
+      ],
       providers: [AuthService]
     })
     .compileComponents();
-
+    
     authService = TestBed.get(AuthService);
 
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    httpMock = TestBed.inject(HttpTestingController);
+    // router = TestBed.inject(Router);
+          
   });
 
   it('should create', () => {
@@ -37,47 +46,35 @@ describe('LoginComponent', () => {
     expect(authService.login).toHaveBeenCalled();
   });
 
+  it('should generate a token in localStorage when form is submitted', () => {
+    spyOn(authService, 'login').and.callFake(() => {
+      return from([{ token: 'mockToken' }]);
+    });
+    const submitButton = fixture.nativeElement.querySelector('button[type="submit"]');
+    submitButton.click();
+    fixture.whenStable().then(() => {
+      expect(localStorage.getItem('token')).toBe('mockToken');
+    });
+  });
 
+  // it('should navigate to another route when user is logged in', ()=>{
+  //   const url = 'http://localhost:4200/waiter';
+  //   const navigateSpy = spyOn(router, 'navigateByUrl');
+  //   spyOn(authService, 'login').and.callFake(() => {
+  //     return from([{ token: 'mockToken' }]);
+  //   });
+  //   const submitButton = fixture.nativeElement.querySelector('button[type="submit"]');
+  //   submitButton.click();
+  //   fixture.whenStable().then(() => {
+  //     expect(navigateSpy).toHaveBeenCalledWith(url);
+  //     expect(location.pathname).toBe(url)
+  //   });
+  // })
 });
 
-describe('AuthService', () => {
-  let service: AuthService;
-  let httpMock: HttpTestingController;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [AuthService]
-    });
-    service = TestBed.inject(AuthService);
-    httpMock = TestBed.inject(HttpTestingController);
-
-    
-  });
-
-  afterEach(() => {
-    httpMock.verify();
-  });
-
-  it('should set token in local storage on successful login', () => {
-    // spyOn(service, 'login');
-    const mockToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-    const mockUser = { email: 'test@email.com', password: 'testpassword' };
-
-    service.login(mockUser.email, mockUser.password).subscribe(response => {
-      // localStorage.setItem('access_token', response.accessToken);
-      // console.log(response.token);
-      expect(localStorage.getItem('access_token')).toEqual(mockToken);
-    });
-    
-    const loginRequest = httpMock.expectOne('http://localhost:3000/login');
-    expect(loginRequest.request.method).toBe('POST');
-    loginRequest.flush({ token: mockToken });
-  });
-});
 
 // 1. si el componente existe YA PASÓ
 // 2. si el componente loguea (ver si el boton hace submit) YA PASO
-// 3. si el componente guarda el token
+// 3. si el componente guarda el token YAPASO!!! :)
 // 4. si el componente lleva a la otra vista (waiter) cuando el usuario se autentifica
-// 5. si el componente bloquea al usuario con contraseña o email incorrecto
+// 5. si el componente bloquea al usuario con contraseña o email incorrecto (el mock de http debe dar error)
