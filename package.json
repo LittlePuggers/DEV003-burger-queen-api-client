@@ -16,7 +16,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "db.json": "json-server-auth db.json",
-    "deploy": "gh-pages -d src"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d src" 
   },
   "private": true,
   "dependencies": {
