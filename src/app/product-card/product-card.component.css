@@ -1,0 +1,19 @@
+.card {
+    background-color: white;
+    height: 185px;
+    width: 222px;
+    margin-top: 8px;
+}
+
+img {
+    height: 88px;
+    width: 88px;
+    margin-top: 40px;
+    margin-left: 67px;
+    margin-bottom: 10px;
+
+}
+
+p {
+    text-align: center;
+}

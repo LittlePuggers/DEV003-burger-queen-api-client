@@ -8,12 +8,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterComponent } from './waiter/waiter/waiter.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+import { OrderComponent } from './order/order.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WaiterComponent,
+    MenuComponent,
+    OrderComponent,
+    ProductCardComponent,
     
   ],
   imports: [

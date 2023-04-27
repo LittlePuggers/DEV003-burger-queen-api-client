@@ -4,7 +4,7 @@
       "id": 1214,
       "name": "Sandwich de jamón y queso",
       "price": 10,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-a03198b36764d59010804fb908940a898719373325437721bb8fbe8f01bb0c85",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/ed1d929983097638eec152cb0fa238abd2582d54/src/assets/products-images/sandwich-jam%C3%B3n-y-queso.jpeg",
       "type": "Desayuno",
       "dateEntry": "2022-03-05 15:14:10"
     },
@@ -12,14 +12,14 @@
       "id": 7450,
       "name": "Café americano",
       "price": 5,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-def6cf6af7102a4ba0ebcf77aa00a00ce66d73fd0c0b5679ef12febf9686f34d",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-americano.jpeg",
       "type": "Desayuno",
       "dateEntry": ""
     },
     {
       "name": "Café con leche",
       "price": 7,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-2dd8206f63196edbe7a6fd32f93c57c179446d8a315eb0bb4b5adea3f98c0e18",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-con-leche.jpeg",
       "type": "Desayuno",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7451
@@ -27,7 +27,7 @@
     {
       "name": "Jugo de frutas natural",
       "price": 7,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-a97f32931aedf6aaa9818350deb4681333e71c73f424238d7c2741b52fd353e2",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/Jugo-de-frutas.jpeg",
       "type": "Desayuno",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7452
@@ -35,7 +35,7 @@
     {
       "name": "Hamburguesa simple",
       "price": 10,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-8950393a7b24e6e85b7761b8a700deedd2a8b56bda298331262dd185aceb961a",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7453
@@ -43,7 +43,7 @@
     {
       "name": "Hamburguesa doble",
       "price": 15,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-72082fd6a82732fb0d4d5401b61361eca16073a6338485a123dfa140dabda87e",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7454
@@ -51,7 +51,7 @@
     {
       "name": "Papas fritas",
       "price": 5,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-8541349494baaab3c2139e1dc0eb18f9460c875d94da7788a0dd79fbf1832e97",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/papas-fritas.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7455
@@ -59,7 +59,7 @@
     {
       "name": "Aros de cebolla",
       "price": 5,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-2d9fdee77fbc2452999ef7cc712f1827917a3b675be1c9757433e130f405a283",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/aros-de-cebolla.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7456
@@ -67,7 +67,7 @@
     {
       "name": "Agua 500 ml",
       "price": 5,
-      "image": "",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/agua-500.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7457
@@ -75,7 +75,7 @@
     {
       "name": "Agua 750 ml",
       "price": 7,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-76c28d3c65f1281cc7cac59a499c4ec661d907b007479233d0b902e431e868c4",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/agua-750.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7458
@@ -83,7 +83,7 @@
     {
       "name": "Refresco 500 ml",
       "price": 7,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-fad772e69d93293c27d9a52b164babe29b36046b41c6f16b7f74971e3483dedd",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/refresco-500.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7459
@@ -91,7 +91,7 @@
     {
       "name": "Refresco 750 ml",
       "price": 10,
-      "image": "https://github.com/LittlePuggers/DEV003-burger-queen-api-client/commit/ed1d929983097638eec152cb0fa238abd2582d54#diff-e44af7f2a9b99268c7db64bdab166427e65b71437c2be2a6a269f3ec4649113d",
+      "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/refresco-750.jpeg",
       "type": "Resto del día",
       "dateEntry": "2023-04-26 15:14:10",
       "id": 7460
