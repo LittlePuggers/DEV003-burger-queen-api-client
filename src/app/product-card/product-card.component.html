@@ -1,6 +1,19 @@
-<div *ngFor="let product of products">
-    <div class="card"><img src={{product.image}}>
-        <p>{{product.name}}</p>
-        <p>$ {{product.price}}</p>
+<div class="card-breakfast">
+  <div *ngFor="let item of breakfastItems">
+    <div class="card">
+      <img src="{{ item.image }}" />
+      <p>{{ item.name }}</p>
+      <p>$ {{ item.price }}</p>
     </div>
+  </div>
+</div>
+
+<div class="card-lunch">
+  <div *ngFor="let item of lunchItems">
+    <div class="card">
+      <img src="{{ item.image }}" />
+      <p>{{ item.name }}</p>
+      <p>$ {{ item.price }}</p>
+    </div>
+  </div>
 </div>
