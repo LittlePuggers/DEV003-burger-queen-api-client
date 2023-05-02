@@ -1,21 +1,26 @@
 h1 {
-    margin-top: 30px;
-    margin: 2vh 0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 3em;
+  margin-top: 30px;
+  margin: 2vh 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 3em;
+  text-align: center;
 }
 
 .menu-type {
-    display: flex;
-    width: 90vh;
-    justify-content: space-between;
+  display: flex;
+  width: 90vh;
+  justify-content: space-around;
 }
 
 p {
-    margin-top: 30px;
-    margin: 2vh 0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 2em;
+  margin-top: 30px;
+  margin: 2vh 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.card-container {
+  display: flex;
 }

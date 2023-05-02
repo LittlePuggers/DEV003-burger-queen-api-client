@@ -1,19 +1,39 @@
 .card {
-    background-color: white;
-    height: 185px;
-    width: 222px;
-    margin-top: 8px;
+  background-color: white;
+  height: 185px;
+  width: 222px;
+  margin-top: 8px;
+  flex: 1;
+  margin-right: 10px;
 }
 
 img {
-    height: 88px;
-    width: 88px;
-    margin-top: 40px;
-    margin-left: 67px;
-    margin-bottom: 10px;
-
+  height: 88px;
+  width: 88px;
+  margin-top: 40px;
+  margin-left: 67px;
+  margin-bottom: 10px;
 }
 
 p {
-    text-align: center;
+  text-align: center;
+}
+
+.card-breakfast {
+  /* background-color: yellow; */
+  height: 700px;
+  width: 33%;
+  overflow: scroll;
+  margin-left: 80px;
+}
+
+.card-lunch {
+  height: 700px;
+  width: 66%;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  justify-content: center;
+  /* background-color: yellow; */
 }
