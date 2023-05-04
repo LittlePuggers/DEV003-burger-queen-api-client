@@ -117,7 +117,64 @@
       "id": "Gg42wrM"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "orders": [
+    {
+      "id": 2324,
+      "userId": 15254,
+      "client": "Jude Milhon",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "id": 1214,
+            "name": "Sandwich de jamón y queso",
+            "price": 10,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 7451,
+            "name": "Café con leche",
+            "price": 7,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-con-leche.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2325,
+      "userId": 15254,
+      "client": "Andres",
+      "products": [
+        {
+          "qty": 2,
+          "product": {
+            "id": 1214,
+            "name": "Sandwich de jamón y queso",
+            "price": 10,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        },
+        {
+          "qty": 2,
+          "product": {
+            "id": 7451,
+            "name": "Café con leche",
+            "price": 7,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-con-leche.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        }
+      ]
+    }
+  ]
 }

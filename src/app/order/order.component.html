@@ -1,1 +1,14 @@
-<p>order works!</p>
+<h1>Orden</h1>
+<div id="cliente">
+  <p>Cliente:</p>
+  <input type="text" />
+</div>
+
+<div class="order" *ngFor="let newOrder of orders">
+  <!-- El primer ngFor itera sobre las ordenes -->
+  <div *ngFor="let item of newOrder.products">
+    <!-- El segundo ngFor itera sobre los productos de la orden actual -->
+    <p>{{ item.product.name }}</p>
+    <p>{{ item.qty }}</p>
+  </div>
+</div>
