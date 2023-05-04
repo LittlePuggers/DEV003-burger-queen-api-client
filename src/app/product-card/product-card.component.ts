@@ -30,13 +30,11 @@ export class ProductCardComponent {
   breakfastItems: Product[] = []
   lunchItems: Product[] = []
 
-  constructor(private http: HttpClient) { 
-    // this.showBreakfast()
-    this.showProducts() 
-  } // Muestra los productos en la consola
+  constructor(private http: HttpClient) {
+    this.showProducts() // Muestra los productos en la consola
+  } 
   
   getProducts(): Observable<any> {
-    // console.log(this.getProducts)
     return this.http.get('http://localhost:3000/products')
   }
   
@@ -49,9 +47,9 @@ export class ProductCardComponent {
       this.lunchItems = this.products.filter((product)=>{
         return product.type === 'Resto del día'
       })
-      console.log(this.products);
-      console.log(this.breakfastItems);
-      console.log(this.lunchItems)
+      // console.log(this.products);
+      // console.log(this.breakfastItems);
+      // console.log(this.lunchItems)
     });
   }
   

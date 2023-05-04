@@ -11,10 +11,11 @@ main {
 
 section {
   background-color: white;
-  width: 15vw;
-  height: 45vh;
-  margin-left: 300px;
-  margin-top: 3vh;
+  width: 50vw;
+  height: 90vh;
+  margin-left: 110px;
+  margin-right: 50px;
+  margin-top: 5vh;
   border-radius: 5%;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -26,7 +27,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: left;
-  width: 150vw;
+  width: 50vw;
   height: 95vh;
   margin-top: 5vh;
   margin-left: 40px;
