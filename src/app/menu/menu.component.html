@@ -4,5 +4,9 @@
   <p>Resto del día</p>
 </div>
 <div id="product-card">
-  <app-product-card class="card-container"> </app-product-card>
+  <app-product-card
+    class="card-container"
+    (productoSeleccionado)="recibeProducto($event)"
+  >
+  </app-product-card>
 </div>

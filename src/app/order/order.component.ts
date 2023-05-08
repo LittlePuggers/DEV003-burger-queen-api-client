@@ -1,26 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgModel } from '@angular/forms';
-
-interface Order {
-  id: number,
-  userId: string,
-  client: string,
-  products: [
-    {
-      qty: number,
-      product: {
-        id: number,
-        name: string,
-        price: number,
-        image: string,
-        type: string,
-        dateEntry: string,
-      }
-    }
-  ],  
-}
+import { Product } from '../interfaces/producto';
+import { Order } from '../interfaces/orden';
 
 @Component({
   selector: 'app-order',
@@ -28,6 +11,11 @@ interface Order {
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
+
+  @Input() productSelected!: Product 
+
+  selectedProducts: Product[] = []
+
   orders: Array<Order> = [{
     id: 0,
     userId: '',
@@ -66,9 +54,17 @@ export class OrderComponent {
     ],  
   };
 
+  
+
   constructor(private http: HttpClient) {
     this.showOrders() // Muestra los productos en la consola
+    this.addSelectedProduct(this.productSelected)
   } 
+
+  addSelectedProduct(productSelected: Product) {
+    this.selectedProducts.push(productSelected)
+    console.log(this.selectedProducts)
+  }
   
   addProduct(product:any, qty:number) {
     this.newOrder.products.push({ product, qty });
@@ -83,7 +79,7 @@ export class OrderComponent {
   showOrders(): void {
     this.getOrders().subscribe((orders) => {
       this.orders = orders;
-      console.log(orders)
+      // console.log(orders)
     });
   }
 }

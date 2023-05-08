@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Product } from '../interfaces/producto';
 
 @Component({
   selector: 'app-menu',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  @Output() productoSeleccionado = new EventEmitter<Product>
+
+  recibeProducto(product:Product) {
+    this.productoSeleccionado.emit(product)
+  }
 
 }
