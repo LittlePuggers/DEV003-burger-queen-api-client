@@ -1,15 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-interface Product {
-  id: number,
-  dateEntry: string,
-  image: string,
-  name: string,
-  price: number,
-  type: string
-}
+import { Product } from '../interfaces/producto';
 
 @Component({
   selector: 'app-product-card',
@@ -18,6 +10,8 @@ interface Product {
 })
 
 export class ProductCardComponent {
+  @Output() productoSeleccionado = new EventEmitter<Product>
+  
   products: Array<Product> = [{
     id: 0,
     dateEntry: '',
@@ -29,6 +23,8 @@ export class ProductCardComponent {
 
   breakfastItems: Product[] = []
   lunchItems: Product[] = []
+
+  
 
   constructor(private http: HttpClient) {
     this.showProducts() // Muestra los productos en la consola
@@ -53,5 +49,10 @@ export class ProductCardComponent {
     });
   }
   
+  sendSelectedProduct(product: Product): void {
+    this.productoSeleccionado.emit(product)
+    // console.log(product)
+  }
+
 }
 

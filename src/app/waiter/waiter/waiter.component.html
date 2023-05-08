@@ -1,10 +1,10 @@
 <main>
   <div id="menu">
-    <app-menu></app-menu>
+    <app-menu (productoSeleccionado)="reciboProducto($event)"></app-menu>
   </div>
   <section>
     <div id="order">
-      <app-order></app-order>
+      <app-order [productSelected]="productoSeleccionado"></app-order>
     </div>
   </section>
 </main>
