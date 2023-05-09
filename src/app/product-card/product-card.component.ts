@@ -11,7 +11,7 @@ import { Product } from '../interfaces/producto';
 
 export class ProductCardComponent {
   @Output() productoSeleccionado = new EventEmitter<Product>
-  
+
   products: Array<Product> = [{
     id: 0,
     dateEntry: '',
@@ -24,34 +24,30 @@ export class ProductCardComponent {
   breakfastItems: Product[] = []
   lunchItems: Product[] = []
 
-  
+
 
   constructor(private http: HttpClient) {
     this.showProducts() // Muestra los productos en la consola
-  } 
-  
+  }
+
   getProducts(): Observable<any> {
     return this.http.get('http://localhost:3000/products')
   }
-  
+
   showProducts(): void {
     this.getProducts().subscribe((products) => {
       this.products = products;
-      this.breakfastItems = this.products.filter((product)=> 
+      this.breakfastItems = this.products.filter((product) =>
         product.type === 'Desayuno'
       )
-      this.lunchItems = this.products.filter((product)=>{
+      this.lunchItems = this.products.filter((product) => {
         return product.type === 'Resto del día'
       })
-      // console.log(this.products);
-      // console.log(this.breakfastItems);
-      // console.log(this.lunchItems)
     });
   }
-  
+
   sendSelectedProduct(product: Product): void {
     this.productoSeleccionado.emit(product)
-    // console.log(product)
   }
 
 }

@@ -13,42 +13,45 @@ export class LoginComponent implements OnInit {
   public myForm!: FormGroup;
   public submitted = false;
 
-  messageError:any;
-  
+  messageError: any;
+
   constructor(
-    private fb: 
-    FormBuilder, 
-    private loginProvider: AuthService, 
-    private router: Router, ) { }
+    private fb:
+      FormBuilder,
+    private loginProvider: AuthService,
+    private router: Router,) { }
   ngOnInit(): void {
     this.myForm = this.createMyForm();
   }
   private createMyForm(): FormGroup {
-    
+
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  public submitForm():void {
-    if(this.myForm.value === undefined) {return};
-    const { email, password} = this.myForm.value;
+  public submitForm(): void {
+    if (this.myForm.value === undefined) { return };
+    const { email, password } = this.myForm.value;
 
     this.loginProvider.login(email, password).subscribe({
-      next: (res)=>{
+      next: (res) => {
         console.log(res.accessToken);
+        console.log(res.user)
         localStorage.setItem('access_token', res.accessToken);
+        localStorage.setItem('user', JSON.stringify(res.user));
         this.router.navigate(['/waiter']);
       },
-      error: (err)=>{
+      error: (err) => {
         this.messageError = err;
-        console.log(this.messageError); 
-      }})
+        console.log(this.messageError);
+      }
+    })
 
   }
 
-  public clearError():void {
+  public clearError(): void {
     this.messageError = null;
   }
 

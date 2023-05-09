@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { NgModel } from '@angular/forms';
 import { Product } from '../interfaces/producto';
 import { Order } from '../interfaces/orden';
+import { ProductOrder } from '../interfaces/productOrder';
 
 @Component({
   selector: 'app-order',
@@ -12,12 +13,12 @@ import { Order } from '../interfaces/orden';
 })
 export class OrderComponent {
 
-  @Input() productsSelected!: Product[] 
- 
+  @Input() productsSelected!: ProductOrder[]
+
 
   constructor(private http: HttpClient) {
 
-  } 
+  }
 
 
 }

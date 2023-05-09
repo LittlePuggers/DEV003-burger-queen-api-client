@@ -5,9 +5,7 @@
 </div>
 
 <div *ngIf="productsSelected">
-  <ul>
-    <li *ngFor="let product of productsSelected">
-      {{ product.name }} - ${{ product.price }}
-    </li>
-  </ul>
+  <div *ngFor="let productOrder of productsSelected">
+    {{ productOrder.product.name }} - ${{ productOrder.product.price }} - {{ productOrder.qty }}
+  </div>
 </div>
