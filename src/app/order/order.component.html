@@ -4,21 +4,10 @@
   <input type="text" />
 </div>
 
-<!-- <div class="order" *ngFor="let newOrder of orders"> -->
-<!-- El primer ngFor itera sobre las ordenes -->
-<!-- <div *ngFor="let item of newOrder.products"> -->
-<!-- El segundo ngFor itera sobre los productos de la orden actual -->
-<!-- <p>{{ item.product.name }}</p>
-    <p>{{ item.qty }}</p>
-  </div>
-</div> -->
-
-<div *ngIf="productSelected">
-  <h2>Productos seleccionados</h2>
+<div *ngIf="productsSelected">
   <ul>
-    <li *ngFor="let product of selectedProducts">
-      {{ productSelected.name }} - {{ productSelected.price }}
-      <!-- {{ product.name }} -->
+    <li *ngFor="let product of productsSelected">
+      {{ product.name }} - ${{ product.price }}
     </li>
   </ul>
 </div>

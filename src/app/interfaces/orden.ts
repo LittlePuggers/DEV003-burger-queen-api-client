@@ -14,5 +14,7 @@ export interface Order {
           dateEntry: string,
         }
       }
-    ],  
+    ],
+    status: string,
+    dataEntry: string  
   }
