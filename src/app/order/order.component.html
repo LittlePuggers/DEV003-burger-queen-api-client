@@ -1,11 +1,11 @@
 <h1>Orden</h1>
 <div id="cliente">
   <p>Cliente:</p>
-  <input type="text" />
+  <input type="text" [(ngModel)]="clientName" (blur)="onBlur(clientName)" />
 </div>
 
 <div *ngIf="productsSelected">
   <div *ngFor="let productOrder of productsSelected">
-    {{ productOrder.product.name }} - ${{ productOrder.product.price }} - {{ productOrder.qty }}
+    {{ productOrder.product.name }} - ${{ productOrder.totalPrice }} - {{ productOrder.qty }}
   </div>
 </div>

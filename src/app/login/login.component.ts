@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
     this.loginProvider.login(email, password).subscribe({
       next: (res) => {
         console.log(res.accessToken);
-        console.log(res.user)
+        // console.log(res.user)
         localStorage.setItem('access_token', res.accessToken);
-        localStorage.setItem('user', JSON.stringify(res.user));
+        localStorage.setItem('userId', JSON.stringify(res.user.id));
         this.router.navigate(['/waiter']);
       },
       error: (err) => {

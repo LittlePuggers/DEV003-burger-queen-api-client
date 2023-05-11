@@ -19,7 +19,7 @@ export class AuthService {
     const header = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    console.log(body);
+    // console.log(body);
     return this.http.post(this.api, body, { headers: header })
   }
 

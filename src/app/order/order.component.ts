@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgModel } from '@angular/forms';
 import { Product } from '../interfaces/producto';
@@ -12,9 +12,15 @@ import { ProductOrder } from '../interfaces/productOrder';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
+  clientName = '';
+  onBlur(value: string) {
+    this.clientName = value;
+    // console.log(this.clientName)
+    this.newOrderClient.emit(this.clientName)
 
+  }
   @Input() productsSelected!: ProductOrder[]
-
+  @Output() newOrderClient = new EventEmitter<string>
 
   constructor(private http: HttpClient) {
 

@@ -1,20 +1,11 @@
+import { ProductOrder } from "./productOrder";
+
 export interface Order {
-    id: number,
-    userId: string,
-    client: string,
-    products: [
-      {
-        qty: number,
-        product: {
-          id: number,
-          name: string,
-          price: number,
-          image: string,
-          type: string,
-          dateEntry: string,
-        }
-      }
-    ],
-    status: string,
-    dataEntry: string  
-  }
+  id: number,
+  userId: string,
+  client: string,
+  products: ProductOrder[],
+  total: number,
+  status: string,
+  dataEntry: string
+}

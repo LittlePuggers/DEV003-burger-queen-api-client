@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Order } from 'src/app/interfaces/orden';
 import { ProductOrder } from 'src/app/interfaces/productOrder';
 import { Product } from 'src/app/interfaces/producto';
@@ -9,11 +9,10 @@ import { Product } from 'src/app/interfaces/producto';
   styleUrls: ['./waiter.component.css']
 })
 export class WaiterComponent {
-
   productoSeleccionado!: ProductOrder
 
   productosSeleccionados: ProductOrder[] = []
-
+  precioTotal: number = 0
   reciboProducto(product: Product) {
 
     const findProductById = (id: number): ProductOrder | undefined => {
@@ -23,41 +22,48 @@ export class WaiterComponent {
     const existingProduct = findProductById(product.id);
     if (existingProduct) {
       existingProduct.qty++;
+      existingProduct.totalPrice += product.price;
     } else {
 
       this.productosSeleccionados.push({
         qty: 1,
-        product: product
+        product: product,
+        totalPrice: product.price
       });
     }
 
-    this.productoSeleccionado = {
-      qty: 1,
-      product: product
-    }
+    const waiterUserId = localStorage.getItem('userId')
+    this.newOrder.userId = waiterUserId!
 
-    // this.productosSeleccionados.push(this.productoSeleccionado)
-    console.log(localStorage.getItem('user'))
-    console.log(this.newOrder.products)
-    this.newOrder.products.push(this.productoSeleccionado)
+    // console.log(waiterUserId)
+    console.log(this.newOrder)
+    console.log(this.productoSeleccionado)
+    console.log(this.productosSeleccionados)
+
+    this.newOrder.products = this.productosSeleccionados;
+    this.totalPriceOrder()
+  }
+  reciboCliente(newOrderClient: string) {
+    this.newOrder.client = newOrderClient
+    // console.log(newOrderClient);
+  }
+
+  totalPriceOrder() {
+    this.precioTotal = 0;
+    for (let i = 0; i < this.productosSeleccionados.length; i++) {
+      this.precioTotal += this.productosSeleccionados[i].totalPrice;
+
+    }
+    this.newOrder.total = this.precioTotal;
+    console.log(this.precioTotal)
+    // console.log(this.totalPriceOrder)
   }
   newOrder: Order = {
     id: 0,
     userId: '',
     client: '',
-    products: [
-      {
-        qty: 0,
-        product: {
-          id: 0,
-          name: '',
-          price: 0,
-          image: '',
-          type: '',
-          dateEntry: '',
-        }
-      }
-    ],
+    products: [],
+    total: 0,
     status: '',
     dataEntry: ''
   }
