@@ -12,6 +12,7 @@ import { ProductOrder } from '../interfaces/productOrder';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
+  productoSeleccionado: any;
   clientName = '';
   onBlur(value: string) {
     this.clientName = value;
@@ -19,12 +20,26 @@ export class OrderComponent {
     this.newOrderClient.emit(this.clientName)
 
   }
-  @Input() productsSelected!: ProductOrder[]
-  @Output() newOrderClient = new EventEmitter<string>
+  @Input() productsSelected!: ProductOrder[];
+  @Input() precioTotalOrden!: number;
+  @Output() newOrderClient = new EventEmitter<string>;
+  @Output() decrease = new EventEmitter<ProductOrder>();
+  @Output() increase = new EventEmitter<ProductOrder>();
+  @Output() delete = new EventEmitter<ProductOrder>();
 
   constructor(private http: HttpClient) {
 
   }
 
+  minusQty(productoSeleccionado: ProductOrder) {
+    this.decrease.emit(productoSeleccionado);
+  }
 
+  plusQty(productoSeleccionado: ProductOrder){
+    this.increase.emit(productoSeleccionado)
+  }
+
+  deleteProduct(productoSeleccionado: ProductOrder){
+    this.delete.emit(productoSeleccionado)
+  }
 }

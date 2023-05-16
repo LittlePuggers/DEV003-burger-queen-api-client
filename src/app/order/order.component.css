@@ -31,12 +31,44 @@ input[type="text"] {
   border-bottom: 1px solid black;
 }
 
-.order {
+.product-detail {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+.product-name {
+  flex: 3;
+}
+
+.product-qty,
+.product-total {
+  flex: 1;
+}
+
+.product-qty {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-.order p {
+
+.product-total {
+  text-align: center;
+}
+
+.product-detail div {
   font-family: "Montserrat", sans-serif;
   font-size: 1em;
+}
+
+.order-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.total-price {
+  font-family: "Montserrat", sans-serif;
+  font-size: x-large;
+  margin-top: 20px;
 }

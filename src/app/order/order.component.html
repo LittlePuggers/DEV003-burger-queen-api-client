@@ -5,7 +5,28 @@
 </div>
 
 <div *ngIf="productsSelected">
-  <div *ngFor="let productOrder of productsSelected">
-    {{ productOrder.product.name }} - ${{ productOrder.totalPrice }} - {{ productOrder.qty }}
+  <div *ngFor="let productOrder of productsSelected" class="product-detail">
+    <div class="product-name">{{ productOrder.product.name }}</div>
+    <div class="product-qty">
+      <img
+        src="../../assets/products-images/circle-minus-solid (2).svg"
+        class="order-icon minus-icon"
+        (click)="minusQty(productOrder)"
+      />
+      <div class="product-qty">{{ productOrder.qty }}</div>
+      <img
+        src="../../assets/products-images/circle-plus-solid (2).svg"
+        class="order-icon"
+        (click)="plusQty(productOrder)"
+      />
+    </div>
+    <div class="product-total">${{ productOrder.totalPrice }}</div>
+    <img
+      src="../../assets/products-images/trash-solid (1).svg"
+      class="order-icon"
+      (click)="deleteProduct(productOrder)"
+    />
   </div>
 </div>
+
+<div class="total-price">Total: ${{ precioTotalOrden }}</div>
