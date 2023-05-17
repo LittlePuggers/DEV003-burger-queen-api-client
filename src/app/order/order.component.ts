@@ -26,6 +26,7 @@ export class OrderComponent {
   @Output() decrease = new EventEmitter<ProductOrder>();
   @Output() increase = new EventEmitter<ProductOrder>();
   @Output() delete = new EventEmitter<ProductOrder>();
+  @Output() submitOrder = new EventEmitter<void>();
 
   constructor(private http: HttpClient) {
 
@@ -42,4 +43,9 @@ export class OrderComponent {
   deleteProduct(productoSeleccionado: ProductOrder){
     this.delete.emit(productoSeleccionado)
   }
+
+  clearClient() {
+    this.clientName = ''; 
+  }
+
 }

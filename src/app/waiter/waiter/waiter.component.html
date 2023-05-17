@@ -5,12 +5,14 @@
   <section>
     <div id="order">
       <app-order
+        #orderComponent
         [productsSelected]="productosSeleccionados"
         [precioTotalOrden]="precioTotal"
         (newOrderClient)="reciboCliente($event)"
         (decrease)="decreaseQuantity($event)"
         (increase)="increaseQuantity($event)"
         (delete)="deleteProduct($event)"
+        (submitOrder)="saveOrder()"
       ></app-order>
     </div>
   </section>
