@@ -1,7 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, AfterViewInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/orden';
 import { ProductOrder } from 'src/app/interfaces/productOrder';
 import { Product } from 'src/app/interfaces/producto';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { OrderComponent } from 'src/app/order/order.component';
 
 @Component({
   selector: 'app-waiter',
@@ -23,7 +26,13 @@ export class WaiterComponent {
     status: '',
     dataEntry: ''
   }
+  @Output() clearClient = new EventEmitter<void>();
+  @ViewChild(OrderComponent) orderComponent!: OrderComponent;
 
+  constructor(private http: HttpClient) { 
+    
+  }
+  
   totalPriceOrder() {
     this.precioTotal = 0;
     for (let i = 0; i < this.productosSeleccionados.length; i++) {
@@ -98,8 +107,43 @@ export class WaiterComponent {
     const existingProduct = findProductById(producto.product.id);
     if (existingProduct) {
       this.productosSeleccionados = this.productosSeleccionados.filter(productOrder => productOrder !== producto);
+      this.newOrder.products = this.productosSeleccionados;
     }
     this.totalPriceOrder()
   }
 
+  saveOrder() {
+    if (this.newOrder.client === '' || this.newOrder.products.length === 0){
+      return alert('Complete todos los campos para enviar la orden a la cocina');
+    }
+    this.newOrder.status = 'Pendiente';
+    this.newOrder.dataEntry = new Date().toDateString() + ' ' + new Date().toLocaleTimeString()
+    console.log(this.newOrder);
+
+    const api:string = 'http://localhost:3000/orders';
+    const body = this.newOrder;
+
+    this.http.post(api, body).subscribe(
+      response => {
+        console.log(response);
+        this.newOrder = {
+          id: 0,
+          userId: '',
+          client: '',
+          products: [],
+          total: 0,
+          status: '',
+          dataEntry: ''
+        };
+        this.orderComponent.clearClient();
+        this.productosSeleccionados = [];
+        this.precioTotal = 0;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+  
 }
+
