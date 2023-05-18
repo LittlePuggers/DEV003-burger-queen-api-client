@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { WaiterComponent } from './waiter/waiter/waiter.component';
 import { AuthResolver } from '../services/auth.resolver';
+import { ChefComponent } from './chef/chef.component';
 const routes: Routes = [
   { path: '', component: LoginComponent, resolve: { isAuthenticated: AuthResolver } },
   { path: 'login', component: LoginComponent },
-  { path: 'waiter', component: WaiterComponent, resolve: { isAuthenticated: AuthResolver } }
-
+  { path: 'waiter', component: WaiterComponent, resolve: { isAuthenticated: AuthResolver } },
+  { path: 'chef', component: ChefComponent, resolve: { isAuthenticated: AuthResolver } }
 ];
 
 @NgModule({

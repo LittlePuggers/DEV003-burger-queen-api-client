@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ChefComponent } from './chef/chef.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MenuComponent,
     OrderComponent,
     ProductCardComponent,
+    ChefComponent,
     
   ],
   imports: [
