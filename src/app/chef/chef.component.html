@@ -1,0 +1,17 @@
+<p>Pedidos pendientes</p>
+<div class="card-orders">
+    <div *ngFor="let item of orders">
+        <p>Cliente: {{ item.client }}</p>
+        <p>Pedido:</p>
+        <div *ngFor="let item of item.products">
+            <span>
+                {{ item.qty }}
+                {{ item.product.name }}
+            </span>
+        </div>
+        <p>Status: {{ item.status }}</p>
+        <p> Fecha y hora: {{ item.dataEntry }}</p>
+        <button (click)="changeStatus()">Pendiente</button>
+    </div>
+
+</div>

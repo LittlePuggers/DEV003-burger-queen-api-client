@@ -41,7 +41,14 @@ export class LoginComponent implements OnInit {
         // console.log(res.user)
         localStorage.setItem('access_token', res.accessToken);
         localStorage.setItem('userId', JSON.stringify(res.user.id));
-        this.router.navigate(['/waiter']);
+        localStorage.setItem('rol', JSON.stringify(res.user.rol));
+        if (res.user.rol === "mesero") {
+          this.router.navigate(['/waiter'])
+        };
+        if (res.user.rol === "cocina") {
+          this.router.navigate(['/chef'])
+        };
+
       },
       error: (err) => {
         this.messageError = err;
