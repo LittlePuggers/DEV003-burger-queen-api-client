@@ -8,15 +8,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./chef.component.css']
 })
 
-
 export class ChefComponent {
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef) {}
+
   api: string = 'http://localhost:3000/orders';
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef) {
-  }
-  orders: any
+  orders: Order[] = []
 
   ngOnInit(): void {
-    this.orders = []
     this.http.get(this.api).subscribe(
       (response: any) => {
         console.log(response)
@@ -29,12 +27,12 @@ export class ChefComponent {
       }
     )
   }
-  changeStatus() {
+
+  changeStatus(order: Order) {
     const body = { status: "Preparado" }
-    for (let i = 0; i < this.orders.length; i++) {
-      if (this.orders[i].status === "Pendiente") {
-        this.http.patch(this.api + "/" + this.orders[i].id, body).subscribe()
-      }
-    }
+    this.http.patch(this.api + '/' + order.id, body).subscribe(()=>{
+      this.ngOnInit()
+    });
   }
+
 }
