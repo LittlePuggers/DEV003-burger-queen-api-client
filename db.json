@@ -434,7 +434,7 @@
         }
       ],
       "total": 5,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:17:01 PM"
     },
     {
@@ -456,7 +456,7 @@
         }
       ],
       "total": 15,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:17:39 PM"
     },
     {
@@ -478,7 +478,7 @@
         }
       ],
       "total": 5,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:21:08 PM"
     },
     {
@@ -500,7 +500,7 @@
         }
       ],
       "total": 15,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:34:27 PM"
     },
     {
@@ -522,7 +522,7 @@
         }
       ],
       "total": 5,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:35:59 PM"
     },
     {
@@ -544,7 +544,7 @@
         }
       ],
       "total": 5,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Wed May 17 2023 2:42:27 PM"
     },
     {
@@ -588,8 +588,42 @@
         }
       ],
       "total": 10,
-      "status": "Preparado",
+      "status": "Pendiente",
       "dataEntry": "Thu May 18 2023 16:06:12"
+    },
+    {
+      "id": 2341,
+      "userId": "\"0koEx_E\"",
+      "client": "Luisa",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "id": 1214,
+            "name": "Sandwich de jamón y queso",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/ed1d929983097638eec152cb0fa238abd2582d54/src/assets/products-images/sandwich-jam%C3%B3n-y-queso.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          },
+          "totalPrice": 10
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 7450,
+            "name": "Café americano",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-americano.jpeg",
+            "type": "Desayuno",
+            "dateEntry": ""
+          },
+          "totalPrice": 5
+        }
+      ],
+      "total": 15,
+      "status": "Pendiente",
+      "dataEntry": "Thu May 18 2023 9:12:07 PM"
     }
   ]
 }
