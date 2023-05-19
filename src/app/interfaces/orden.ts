@@ -1,3 +1,4 @@
+import { Subscription } from "rxjs";
 import { ProductOrder } from "./productOrder";
 
 export interface Order {
@@ -8,5 +9,7 @@ export interface Order {
   total: number,
   status: string,
   dataEntry: Date,
-  timer: number
+  timer: number,
+  entryTime: Date,
+  timerSubscription: Subscription,
 }

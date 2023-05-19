@@ -656,7 +656,7 @@
         }
       ],
       "total": 15,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "Fri May 19 2023 11:54:50 AM",
       "timer": 0
     },
@@ -703,7 +703,7 @@
         }
       ],
       "total": 22,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "Fri May 19 2023 11:56:03 AM",
       "timer": 0
     },
@@ -738,7 +738,7 @@
         }
       ],
       "total": 15,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "Fri May 19 2023 12:02:56 PM",
       "timer": 0
     },
@@ -773,7 +773,7 @@
         }
       ],
       "total": 20,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "12:12:35 PM",
       "timer": 0
     },
@@ -808,7 +808,7 @@
         }
       ],
       "total": 15,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "Fri May 19 2023 12:15:36 PM",
       "timer": 0
     },
@@ -843,9 +843,289 @@
         }
       ],
       "total": 20,
-      "status": "Pendiente",
+      "status": "Preparado",
       "dataEntry": "2023-05-19T19:28:09.350Z",
       "timer": 0
+    },
+    {
+      "id": 2348,
+      "userId": "\"0koEx_E\"",
+      "client": "Felix",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Papas fritas",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/papas-fritas.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7455
+          },
+          "totalPrice": 5
+        },
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 15,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T20:20:51.794Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T20:20:45.552Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2349,
+      "userId": "\"0koEx_E\"",
+      "client": "Timer",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "id": 1214,
+            "name": "Sandwich de jamón y queso",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/ed1d929983097638eec152cb0fa238abd2582d54/src/assets/products-images/sandwich-jam%C3%B3n-y-queso.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          },
+          "totalPrice": 10
+        },
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 20,
+      "status": "Pendiente",
+      "dataEntry": "2023-05-19T20:28:18.376Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T20:28:13.290Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2350,
+      "userId": "\"0koEx_E\"",
+      "client": "Otra",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7454
+          },
+          "totalPrice": 15
+        },
+        {
+          "qty": 1,
+          "product": {
+            "name": "Aros de cebolla",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/aros-de-cebolla.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7456
+          },
+          "totalPrice": 5
+        }
+      ],
+      "total": 20,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T20:44:39.062Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T20:44:34.478Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2351,
+      "userId": "\"0koEx_E\"",
+      "client": "Holi",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Papas fritas",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/papas-fritas.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7455
+          },
+          "totalPrice": 5
+        },
+        {
+          "qty": 1,
+          "product": {
+            "name": "Agua 500 ml",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/agua-500.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7457
+          },
+          "totalPrice": 5
+        }
+      ],
+      "total": 10,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T20:47:58.406Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T20:47:50.972Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2352,
+      "userId": "\"0koEx_E\"",
+      "client": "Segunda",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7454
+          },
+          "totalPrice": 15
+        }
+      ],
+      "total": 15,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T20:58:55.775Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T20:58:50.502Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2353,
+      "userId": "\"0koEx_E\"",
+      "client": "Blanca",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7454
+          },
+          "totalPrice": 15
+        }
+      ],
+      "total": 15,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T21:06:25.428Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T21:06:18.734Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2354,
+      "userId": "\"0koEx_E\"",
+      "client": "La",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 10,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T21:07:23.597Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T21:07:09.293Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2355,
+      "userId": "\"0koEx_E\"",
+      "client": "Cliente",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Aros de cebolla",
+            "price": 5,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/aros-de-cebolla.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7456
+          },
+          "totalPrice": 5
+        }
+      ],
+      "total": 5,
+      "status": "Preparado",
+      "dataEntry": "2023-05-19T21:15:53.579Z",
+      "timer": 0,
+      "entryTime": "2023-05-19T21:15:49.175Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
     }
   ]
 }

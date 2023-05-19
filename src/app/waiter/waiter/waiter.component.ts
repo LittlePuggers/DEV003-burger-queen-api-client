@@ -3,7 +3,7 @@ import { Order } from 'src/app/interfaces/orden';
 import { ProductOrder } from 'src/app/interfaces/productOrder';
 import { Product } from 'src/app/interfaces/producto';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { OrderComponent } from 'src/app/order/order.component';
 
 @Component({
@@ -25,7 +25,9 @@ export class WaiterComponent {
     total: 0,
     status: '',
     dataEntry: new Date,
-    timer: 0
+    timer: 0,
+    entryTime: new Date,
+    timerSubscription: new Subscription,
   }
   @Output() clearClient = new EventEmitter<void>();
   @ViewChild(OrderComponent) orderComponent!: OrderComponent;
@@ -135,7 +137,9 @@ export class WaiterComponent {
           total: 0,
           status: '',
           dataEntry: new Date(),
-          timer: 0
+          timer: 0,
+          entryTime: new Date,
+          timerSubscription: new Subscription,
         };
         this.orderComponent.clearClient();
         this.productosSeleccionados = [];
