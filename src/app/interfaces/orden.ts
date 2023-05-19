@@ -7,5 +7,6 @@ export interface Order {
   products: ProductOrder[],
   total: number,
   status: string,
-  dataEntry: string
+  dataEntry: Date,
+  timer: number
 }
