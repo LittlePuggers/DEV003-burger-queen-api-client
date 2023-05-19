@@ -24,7 +24,8 @@ export class WaiterComponent {
     products: [],
     total: 0,
     status: '',
-    dataEntry: ''
+    dataEntry: new Date,
+    timer: 0
   }
   @Output() clearClient = new EventEmitter<void>();
   @ViewChild(OrderComponent) orderComponent!: OrderComponent;
@@ -117,7 +118,7 @@ export class WaiterComponent {
       return alert('Complete todos los campos para enviar la orden a la cocina');
     }
     this.newOrder.status = 'Pendiente';
-    this.newOrder.dataEntry = new Date().toDateString() + ' ' + new Date().toLocaleTimeString()
+    this.newOrder.dataEntry = new Date();
     console.log(this.newOrder);
 
     const api:string = 'http://localhost:3000/orders';
@@ -133,7 +134,8 @@ export class WaiterComponent {
           products: [],
           total: 0,
           status: '',
-          dataEntry: ''
+          dataEntry: new Date(),
+          timer: 0
         };
         this.orderComponent.clearClient();
         this.productosSeleccionados = [];

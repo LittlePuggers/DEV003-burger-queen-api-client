@@ -10,7 +10,8 @@
       </span>
     </div>
     <p>Status: {{ item.status }}</p>
-    <p>Fecha y hora: {{ item.dataEntry }}</p>
+    <p>Timer: {{ item.timer }} minutos</p>
+    <p>Hora: {{ formatDate(item.dataEntry) }}</p>
     <button (click)="changeStatus(item)">Pendiente</button>
   </div>
 </div>
