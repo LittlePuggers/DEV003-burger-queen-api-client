@@ -1,17 +1,19 @@
-<p>Pedidos pendientes</p>
-<div class="card-orders">
-  <div *ngFor="let item of orders">
-    <p>Cliente: {{ item.client }}</p>
-    <p>Pedido:</p>
-    <div *ngFor="let item of item.products">
-      <span>
-        {{ item.qty }}
-        {{ item.product.name }}
-      </span>
+<main>
+  <p id="title">Pedidos pendientes</p>
+  <div class="card-orders">
+    <div *ngFor="let item of orders" class="card-order">
+      <p>Cliente: {{ item.client }}</p>
+      <p>Pedido:</p>
+      <div *ngFor="let item of item.products">
+        <span>
+          {{ item.qty }}
+          {{ item.product.name }}
+        </span>
+      </div>
+      <p>Status: {{ item.status }}</p>
+      <p>Hora: {{ formatDate(item.dataEntry) }}</p>
+      <p id="timer">Tiempo de espera: {{ item.timer }} minutos</p>
+      <button (click)="changeStatus(item)">Listo</button>
     </div>
-    <p>Status: {{ item.status }}</p>
-    <p>Timer: {{ item.timer }} minutos</p>
-    <p>Hora: {{ formatDate(item.dataEntry) }}</p>
-    <button (click)="changeStatus(item)">Pendiente</button>
   </div>
-</div>
+</main>

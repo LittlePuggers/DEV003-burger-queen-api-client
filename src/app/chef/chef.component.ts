@@ -14,27 +14,26 @@ export class ChefComponent {
 
   api: string = 'http://localhost:3000/orders';
   orders: Order[] = []
-  timerSubscription: Subscription = new Subscription;
 
-  startTimer(order: Order): void {
-    this.timerSubscription = interval(60000).subscribe(() => {
-      order.timer++; // Incrementa el temporizador en 1 minuto
-    });
+  ngOnInit(): void {     
+    this.http.get(this.api).subscribe((response: any) => {       
+      console.log(response);       
+      this.orders = response.filter((order: any) => order.status === "Pendiente");       
+      this.orders.forEach((order: Order) => {         
+        order.dataEntry = new Date(order.dataEntry);         
+        order.timer = this.calculateTimeDifference(order.dataEntry);         
+        this.startTimer(order);       
+      });       
+      this.ref.detectChanges();     
+    });   
   }
 
-  ngOnInit(): void {
-    this.http.get(this.api).subscribe((response: any) => {
-      console.log(response);
-      for (let i = 0; i < response.length; i++) {
-        if (response[i].status === "Pendiente") {
-          response[i].dataEntry = new Date(response[i].dataEntry); // Convierte la cadena en un objeto Date
-          response[i].timer = this.calculateTimeDifference(response[i].dataEntry); // Calcula la diferencia en minutos
-          this.orders.push(response[i]);
-          this.startTimer(response[i]); // Inicia el temporizador para la orden
-        }
-      }
-      this.ref.detectChanges();
-    });
+  startTimer(order: Order): void {     
+    const timerSubscription = interval(60000).subscribe(() => {       
+      order.timer++;       
+      this.ref.detectChanges(); // Forzar la detección de cambios después de actualizar el temporizador     
+    });     
+    order.timerSubscription = timerSubscription;   
   }
 
   calculateTimeDifference(dataEntry: Date): number {
@@ -44,24 +43,44 @@ export class ChefComponent {
     return diffInMinutes;
   }
 
-  formatDate(date: Date): string {
-    const options: Intl.DateTimeFormatOptions = {hour: "2-digit", minute: "2-digit", second: "2-digit"};   
-    return date.toLocaleString(undefined, options).replace(',', ''); 
-  }
-
   changeStatus(order: Order) {
-    const body = { status: "Preparado" }
+    const body = { status: "Preparado" };
     this.http.patch(this.api + '/' + order.id, body).subscribe(()=>{
+      order.status = "Preparado"; // Actualizar el estado de la orden seleccionada
+      if (order.timerSubscription) {         
+        order.timerSubscription.unsubscribe();       
+      }
+  });
+
       this.http.get(this.api).subscribe((response: any) => {
         console.log(response);
         this.orders = response.filter((order: any) => order.status === "Pendiente");
         this.ref.detectChanges();
       });
-      if (this.timerSubscription) {
-        this.timerSubscription.unsubscribe(); // Cancela la suscripción al temporizador
-      }
-    });
+    //   if (this.timerSubscription) {
+    //     this.timerSubscription.unsubscribe(); // Cancela la suscripción al temporizador
+    //   }
+    // });
   }
+
+  formatDate(date: Date): string {
+    const options: any = {hour: "2-digit", minute: "2-digit", second: "2-digit"};   
+    return date.toLocaleString(undefined, options).replace(',', ''); 
+  }
+
+  formatTime(minutes: number): string {
+    const mins = String(minutes % 60).padStart(2, '0');
+    const hours = String(Math.floor(minutes / 60)).padStart(2, '0');
+    return `${hours}:${mins}`;
+  }
+
+  stopTimer(order: Order): void {
+    if (order.timerSubscription) {
+      order.timerSubscription.unsubscribe(); // Cancelar la suscripción al temporizador
+    }
+  }
+
+  
 
 }
 
