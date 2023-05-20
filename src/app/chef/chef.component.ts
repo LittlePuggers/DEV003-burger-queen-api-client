@@ -45,33 +45,33 @@ export class ChefComponent {
 
   changeStatus(order: Order) {
     const body = { status: "Preparado" };
-    this.http.patch(this.api + '/' + order.id, body).subscribe(()=>{
+    this.http.patch(this.api + '/' + order.id, body).subscribe(() => {
       order.status = "Preparado"; // Actualizar el estado de la orden seleccionada
-      if (order.timerSubscription) {         
-        order.timerSubscription.unsubscribe();       
+  
+      // Filtrar las órdenes con estado "Pendiente" y mantener el temporizador en las demás órdenes
+      this.orders = this.orders.filter((o: Order) => o.status === "Pendiente");
+      
+      if (order.timerSubscription) {
+        order.timerSubscription.unsubscribe();
       }
-  });
-
+  
       this.http.get(this.api).subscribe((response: any) => {
         console.log(response);
-        this.orders = response.filter((order: any) => order.status === "Pendiente");
+        this.orders = response.filter((o: any) => o.status === "Pendiente");
+        this.orders.forEach((o: Order) => {
+          o.dataEntry = new Date(o.dataEntry);
+          o.timer = this.calculateTimeDifference(o.dataEntry);
+          this.startTimer(o);
+        });
         this.ref.detectChanges();
       });
-    //   if (this.timerSubscription) {
-    //     this.timerSubscription.unsubscribe(); // Cancela la suscripción al temporizador
-    //   }
-    // });
+    });
   }
 
+  // Método para únicamente mostrar la hora en formato HH:MM:ss PM/AM
   formatDate(date: Date): string {
     const options: any = {hour: "2-digit", minute: "2-digit", second: "2-digit"};   
     return date.toLocaleString(undefined, options).replace(',', ''); 
-  }
-
-  formatTime(minutes: number): string {
-    const mins = String(minutes % 60).padStart(2, '0');
-    const hours = String(Math.floor(minutes / 60)).padStart(2, '0');
-    return `${hours}:${mins}`;
   }
 
   stopTimer(order: Order): void {

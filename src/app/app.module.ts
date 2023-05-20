@@ -12,6 +12,9 @@ import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ChefComponent } from './chef/chef.component';
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { ChefComponent } from './chef/chef.component';
     OrderComponent,
     ProductCardComponent,
     ChefComponent,
-    
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { ChefComponent } from './chef/chef.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule
   ],
 
   providers: [],
