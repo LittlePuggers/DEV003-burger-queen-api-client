@@ -1,7 +1,10 @@
 <main>
   <p id="title">Pedidos pendientes</p>
   <div class="card-orders">
-    <div *ngFor="let item of orders" class="card-order">
+    <div
+      *ngFor="let item of orders | filter : 'status' : 'Pendiente'"
+      class="card-order"
+    >
       <p>Cliente: {{ item.client }}</p>
       <p>Pedido:</p>
       <div *ngFor="let item of item.products">
@@ -12,7 +15,7 @@
       </div>
       <p>Status: {{ item.status }}</p>
       <p>Hora: {{ formatDate(item.dataEntry) }}</p>
-      <p id="timer">Tiempo de espera: {{ item.timer }} minutos</p>
+      <p id="timer">Tiempo de espera: {{ item.timer }} min</p>
       <button (click)="changeStatus(item)">Listo</button>
     </div>
   </div>

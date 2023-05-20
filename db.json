@@ -1126,6 +1126,76 @@
         "_parentage": null,
         "_finalizers": null
       }
+    },
+    {
+      "id": 2356,
+      "userId": "\"0koEx_E\"",
+      "client": "1",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 10,
+      "status": "Pendiente",
+      "dataEntry": "2023-05-20T02:29:47.802Z",
+      "timer": 0,
+      "entryTime": "2023-05-20T02:29:40.274Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2357,
+      "userId": "\"0koEx_E\"",
+      "client": "2",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        },
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7454
+          },
+          "totalPrice": 15
+        }
+      ],
+      "total": 25,
+      "status": "Pendiente",
+      "dataEntry": "2023-05-20T02:29:50.897Z",
+      "timer": 0,
+      "entryTime": "2023-05-20T02:29:47.836Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
     }
   ]
 }
