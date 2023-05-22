@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { User } from '../interfaces/user';
 
 @Component({
@@ -14,13 +14,22 @@ export class ModalComponent {
   @Output() close = new EventEmitter();
   @Output() userEdited = new EventEmitter<User>();
 
+  editedUser: any;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['user']) {
+      this.editedUser = { ...this.user };
+    }
+  }
+
   onClose() {
     this.close.emit();
   }
   onUserEdit() {
-    // Aquí es donde harías la edición de tu usuario.
-    const editedUser = { ...this.user, name: '', email: "hola", rol: "holi" };
-    this.userEdited.emit(editedUser);  // Luego, emites el evento con el usuario editado.
+    const editedUser = { ...this.editedUser };
+    this.userEdited.emit(editedUser); //Habiamos comentado esta línea
   }
+
 }
+
 

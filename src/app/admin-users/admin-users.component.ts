@@ -8,6 +8,7 @@ import { User } from '../interfaces/user';
   styleUrls: ['./admin-users.component.css']
 })
 export class AdminUsersComponent {
+  userService: any;
   constructor(private http: HttpClient, private ref: ChangeDetectorRef) { }
   users: User[] = []
   api: string = 'http://localhost:3000/users';
@@ -30,13 +31,20 @@ export class AdminUsersComponent {
   closeModal() {
     this.isModalVisible = false;
   }
-  reciboUsuario(editedUser: User) {
-    for (let i = 0; i < this.users.length; i++) {
-      if (this.users[i].id === editedUser.id) {
-        this.users[i] = editedUser;
-        console.log(editedUser)
-      }
 
+  reciboUsuario(editedUser: User) {
+    console.log('reciboUsuario fue llamado con:', editedUser);
+    const index = this.users.findIndex(user => user.id === editedUser.id);
+    if (index !== -1) {
+      this.http.put(`${this.api}/${editedUser.id}`, editedUser).subscribe(response => {
+        if (response) {
+          this.users[index] = response as User;
+          this.ref.detectChanges();  // Detecta los cambios en el componente
+        }
+      }, error => {
+        console.error('Error al actualizar el usuario:', error);
+      });
     }
   }
+
 }
