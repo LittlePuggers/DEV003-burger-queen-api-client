@@ -15,6 +15,8 @@ import { ChefComponent } from './chef/chef.component';
 import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CookedOrdersComponent } from './cooked-orders/cooked-orders.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CookedOrdersComponent } from './cooked-orders/cooked-orders.component';
     ProductCardComponent,
     ChefComponent,
     FilterPipe,
-    CookedOrdersComponent
+    CookedOrdersComponent,
+    AdminUsersComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

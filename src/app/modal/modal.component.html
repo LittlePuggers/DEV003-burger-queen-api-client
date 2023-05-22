@@ -1,0 +1,11 @@
+<div class="modal" *ngIf="isVisible">
+    <div class="modal-content">
+        <span class="close" (click)="onClose()">&times;</span>
+        <p>Contenido del Modal...</p>
+        <p>Empleado:</p><input type="text" placeholder=" {{user.name }}">
+        <p>email:</p> <input type="text" placeholder=" {{user.email }}">
+        <p>rol:</p><input type="text" placeholder=" {{user.rol }}"><br>
+        <button (click)="onUserEdit()">Confirmar cambios</button>
+    </div>
+
+</div>
