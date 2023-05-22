@@ -48,6 +48,9 @@ export class LoginComponent implements OnInit {
         if (res.user.rol === "cocina") {
           this.router.navigate(['/chef'])
         };
+        if (res.user.rol === "administrador") {
+          this.router.navigate(['/adminUsers'])
+        };
 
       },
       error: (err) => {
