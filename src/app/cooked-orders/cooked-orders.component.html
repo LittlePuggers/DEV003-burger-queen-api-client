@@ -1,0 +1,23 @@
+<nav>
+  <span class="nav" (click)="showMenu()">Menú</span>
+</nav>
+<main>
+  <p id="title">Pedidos preparados</p>
+  <div class="card-orders">
+    <div
+      *ngFor="let item of orders | filter : 'status' : 'Preparado'"
+      class="card-order"
+    >
+      <p>Cliente: {{ item.client }}</p>
+      <p>Pedido:</p>
+      <div *ngFor="let item of item.products">
+        <span>
+          {{ item.qty }}
+          {{ item.product.name }}
+        </span>
+      </div>
+      <p>Status: {{ item.status }}</p>
+      <button (click)="changeStatus(item)">Entregado</button>
+    </div>
+  </div>
+</main>

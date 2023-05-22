@@ -5,6 +5,7 @@ import { Product } from 'src/app/interfaces/producto';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { OrderComponent } from 'src/app/order/order.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-waiter',
@@ -32,7 +33,7 @@ export class WaiterComponent {
   @Output() clearClient = new EventEmitter<void>();
   @ViewChild(OrderComponent) orderComponent!: OrderComponent;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router: Router) { 
     
   }
   
@@ -151,5 +152,8 @@ export class WaiterComponent {
     );
   }
   
+  showCookedOrders(){
+    this.router.navigate(['/cookedOrders'])
+  }
 }
 

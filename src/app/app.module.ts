@@ -14,6 +14,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ChefComponent } from './chef/chef.component';
 import { CommonModule } from '@angular/common';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CookedOrdersComponent } from './cooked-orders/cooked-orders.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     OrderComponent,
     ProductCardComponent,
     ChefComponent,
-    FilterPipe
+    FilterPipe,
+    CookedOrdersComponent
   ],
   imports: [
     BrowserModule,
