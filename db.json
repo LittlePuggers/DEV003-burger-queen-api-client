@@ -100,7 +100,7 @@
   "users": [
     {
       "email": "danny.mesero@bq.com",
-      "password": "$2a$10$HjAQGOuK4vzLBmQNry2aJOnG8spKcmRKuw.Yw0AOSXp772zHjlZW2",
+      "password": "$2a$10$7qhZgFfriCdqySplx1kMEO4RpUN49.Fh3/bj6CLCe/yWKwyTMxh7a",
       "rol": "mesero",
       "id": "tXFpHme",
       "name": "Danny"
@@ -121,10 +121,10 @@
     },
     {
       "email": "juli.admin@bq.com",
-      "password": "$2a$10$vuwr6gSXVrZKBlRCByP6NOoNlbogO3pJ/rVnmFdehVQx60hjFtRjC",
+      "password": "$2a$10$NQRcWDtAZsSKzclGlgt1nO0oYmt1H/oJyO04bPUjh.zKhU76ogLxe",
       "rol": "administrador",
       "id": "OFV33DV",
-      "name": "Juli"
+      "name": "Juliana"
     }
   ],
   "orders": [
