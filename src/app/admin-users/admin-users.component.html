@@ -1,17 +1,18 @@
 <main>
     <p id="title">Empleados</p>
-    <button>Agregar empleado</button>
+    <button (click)="openModal(newUser)">Agregar empleado</button>
+    <app-modal [isVisible]="isModalVisible" [user]="selectedUser" (close)="closeModal()">
+    </app-modal>
     <div class="card-orders">
         <div *ngFor="let user of users" class="card-order">
             <p>Empleado: {{ user.name }}</p>
             <p>email: {{ user.email }}</p>
             <p>rol:{{ user.rol }}</p>
-            <p>id: {{ user.id }}</p>
             <button (click)="openModal(user)">Editar</button>
             <app-modal [isVisible]="isModalVisible" [user]="selectedUser" (close)="closeModal()"
                 (userEdited)="reciboUsuario($event)">
             </app-modal>
-            <button>Borrar</button>
+            <button (click)="eliminarUsuario(user.id)">Borrar</button>
         </div>
     </div>
 </main>

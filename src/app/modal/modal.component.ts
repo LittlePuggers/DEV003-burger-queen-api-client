@@ -13,8 +13,10 @@ export class ModalComponent {
   @Input() user: any;
   @Output() close = new EventEmitter();
   @Output() userEdited = new EventEmitter<User>();
+  @Output() userAdded = new EventEmitter<User>();
 
   editedUser: any;
+  addUser: any;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['user']) {
@@ -27,9 +29,12 @@ export class ModalComponent {
   }
   onUserEdit() {
     const editedUser = { ...this.editedUser };
-    this.userEdited.emit(editedUser); //Habiamos comentado esta línea
+    this.userEdited.emit(editedUser);
   }
-
+  onUserAdd() {
+    const addUser = { ...this.addUser };
+    this.userAdded.emit(addUser);
+  }
 }
 
 
