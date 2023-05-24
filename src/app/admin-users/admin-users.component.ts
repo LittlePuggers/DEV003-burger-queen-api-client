@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { User } from '../interfaces/user';
 import { EditedUser } from '../interfaces/editedUser'
@@ -18,10 +18,9 @@ export class AdminUsersComponent {
     this.http.get(this.api).subscribe((response: any) => {
       console.log(response);
       this.users = response;
-
     });
-
   }
+
   isModalVisible = false;
   selectedUser: any;
   openModal(user: User) {
@@ -37,8 +36,9 @@ export class AdminUsersComponent {
     console.log('reciboUsuario fue llamado con:', editedUser);
     const index = this.users.findIndex(user => user.id === editedUser.id);
     if (index !== -1) {
-      this.http.put(`${this.api}/${editedUser.id}`, editedUser).subscribe(response => {
+      this.http.patch(`${this.api}/${editedUser.id}`, editedUser).subscribe(response => {
         if (response) {
+          console.log(response as User)
           this.users[index] = response as EditedUser;
           this.ref.detectChanges();  // Detecta los cambios en el navegador
         }
@@ -47,7 +47,6 @@ export class AdminUsersComponent {
       });
       this.closeModal()
     }
-
   }
 
   eliminarUsuario(userId: string) {
@@ -62,6 +61,7 @@ export class AdminUsersComponent {
       }
     )
   }
+
   newUser: User = {
     name: "",
     rol: "",
@@ -71,7 +71,7 @@ export class AdminUsersComponent {
   }
 
   agregarUsuario(addUser: User) {
-    console.log('reciboUsuario fue llamado con:', addUser);
+    console.log('agregarUsuario fue llamado con:', addUser);
     const index = this.users.findIndex(user => user.id === addUser.id); {
       console.log(index)
       this.http.post(this.api, addUser).subscribe(

@@ -1,28 +1,28 @@
 <div class="modal" *ngIf="isVisible">
-    <div class="modal-content">
-        <span class="close" (click)="onClose()">&times;</span>
-        <p>Información del empleado</p>
-        <label *ngIf="editedUser.id">
-            Id:
-            <input [(ngModel)]="editedUser.id" readonly>
-        </label>
-        <label>
-            Nombre:
-            <input [(ngModel)]="editedUser.name">
-        </label>
-        <label>
-            Rol:
-            <input [(ngModel)]="editedUser.rol">
-        </label>
-        <label>
-            Email:
-            <input [(ngModel)]="editedUser.email">
-        </label>
-        <label *ngIf="!editedUser.id">
-            Contraseña:
-            <input [(ngModel)]="editedUser.password" type="password">
-        </label>
-        <button (click)="onUserEdit()">Confirmar cambios</button>
-        <button (click)="onUserAdd()">Crear usuario</button>
-    </div>
+  <div class="modal-content">
+    <span class="close" (click)="onClose()">&times;</span>
+    <p>Información del empleado</p>
+    <label *ngIf="editedUser.id">
+      Id:
+      <input [(ngModel)]="editedUser.id" readonly />
+    </label>
+    <label>
+      Nombre:
+      <input [(ngModel)]="editedUser.name" />
+    </label>
+    <label>
+      Rol:
+      <input [(ngModel)]="editedUser.rol" />
+    </label>
+    <label>
+      Email:
+      <input [(ngModel)]="editedUser.email" />
+    </label>
+    <label *ngIf="!editedUser.id">
+      Contraseña:
+      <input [(ngModel)]="user.password" type="password" />
+    </label>
+    <button (click)="onUserEdit()">Confirmar cambios</button>
+    <button (click)="onUserAdd()">Crear usuario</button>
+  </div>
 </div>
