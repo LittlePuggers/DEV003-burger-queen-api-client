@@ -46,6 +46,7 @@ export class AdminUsersComponent {
 
   closeModal() {
     this.isEditModalVisible = false;
+
   }
 
   reciboUsuario(editedUser: EditedUser) {
@@ -92,6 +93,7 @@ export class AdminUsersComponent {
           console.error('Error al actualizar el usuario:', error);
         });
       this.closeModal()
+
     }
   }
 }
