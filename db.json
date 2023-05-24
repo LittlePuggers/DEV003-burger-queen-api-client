@@ -100,36 +100,29 @@
   "users": [
     {
       "email": "juli.admin@bq.com",
-      "password": "$2a$10$AN4k9OvQ0bylWEImFNILION3wq5OwGpqdxSDv7BCmgq2JTlYy55XG",
+      "password": "$2a$10$tn7k4SZeqZuyTnqEI.1G0ux6H4DpWbkKhs8bJGzpXBfF12XFq0RGO",
       "rol": "administrador",
       "id": 1,
       "name": "Juli"
     },
     {
       "email": "carlos@bq.com",
-      "password": "$2a$10$j0Jdyi0V0E0RBmrgOdYJWOz/3ltkbl4XGBxwmUbr9gQAUIN33Wqaa",
+      "password": "$2a$10$Zw58gdAy8uNPCj2tgkG.C.wJ6UDibfG3V2WeiudBs3K3cUEHHR2hu",
       "name": "Carlos",
       "rol": "mesero",
       "id": 2
     },
     {
-      "email": "amy@bq.com",
-      "password": "$2a$10$wZ.nWoaQ4U6vuI9OFAUikOVsoneseVZrdcbToF3mDj/avvKafxlhO",
-      "name": "amy",
-      "rol": "cocina",
-      "id": 3
-    },
-    {
       "email": "danny@bq.com",
-      "password": "$2a$10$4KgriaBA/9bID/WEJGYoS.FV0qk38/H0MJBgOUZ9RD5Rzc7DY2mg.",
-      "name": "Danny",
+      "password": "$2a$10$T6mueGCxiHvUCcbGtsut8uDSy2wLiq50xGMHU/3XIPS731QyKpa32",
+      "name": "Daniel",
       "rol": "mesero",
       "id": 5
     },
     {
-      "email": "carmen@bq.com",
-      "password": "$2a$10$LK42Q1p1NHSbpf6q.wpQ3.G/eajXvbxH1I0Rhgt7eGev2yK9Ptouy",
-      "name": "Carmen",
+      "email": "ana@bq.com",
+      "password": "$2a$10$N74X.f5yd2NWTAVlWQiheuCBVkFvh1HURqccmDEIGnF6qtd40pmei",
+      "name": "Ana",
       "rol": "administrador",
       "id": 6
     }
