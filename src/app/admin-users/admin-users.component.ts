@@ -22,14 +22,30 @@ export class AdminUsersComponent {
   }
 
   isModalVisible = false;
+  isEditModalVisible = false;
+  isAddModalVisible = false;
   selectedUser: any;
-  openModal(user: User) {
+  newUser: User = {
+    name: '',
+    email: '',
+    rol: '',
+    id: '',
+    password: ''
+  }
+
+  openModal(user: User | null) {
     this.selectedUser = user;
-    this.isModalVisible = true;
+    this.isEditModalVisible = user !== null;
+    this.isAddModalVisible = false;
+  }
+
+  openAddModal() {
+    this.isEditModalVisible = false;
+    this.isAddModalVisible = true;
   }
 
   closeModal() {
-    this.isModalVisible = false;
+    this.isEditModalVisible = false;
   }
 
   reciboUsuario(editedUser: EditedUser) {
@@ -62,14 +78,6 @@ export class AdminUsersComponent {
     )
   }
 
-  newUser: User = {
-    name: "",
-    rol: "",
-    email: "",
-    password: "",
-    id: ""
-  }
-
   agregarUsuario(addUser: User) {
     console.log('agregarUsuario fue llamado con:', addUser);
     const index = this.users.findIndex(user => user.id === addUser.id); {
@@ -77,7 +85,7 @@ export class AdminUsersComponent {
       this.http.post(this.api, addUser).subscribe(
         (response) => {
           console.log(response)
-          this.users = [...this.users, this.newUser]
+          this.users = [...this.users, addUser]
 
           this.ref.detectChanges();
         }, error => {

@@ -6,12 +6,18 @@ import { EditedUser } from '../interfaces/editedUser';
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class ModalComponent {
-  @Input()
-  isVisible: boolean = false;
-  @Input() user: any;
+  @Input() isVisible: boolean = false;
+  @Input() user: any = {
+    name: '',
+    email: '',
+    rol: '',
+    id: '',
+    password: ''
+  };
   @Output() close = new EventEmitter();
   @Output() userEdited = new EventEmitter<EditedUser>();
   @Output() userAdded = new EventEmitter<User>();
@@ -22,18 +28,17 @@ export class ModalComponent {
     rol: '',
     id: '',
   };
-  addUser: any;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['user']) {
       this.editedUser = { ...this.user };
-      
     }
   }
 
   onClose() {
     this.close.emit();
   }
+
   onUserEdit() {
     const editedUser: EditedUser = {
       name: this.editedUser.name,
@@ -44,6 +49,7 @@ export class ModalComponent {
     console.log('editado', editedUser)
     this.userEdited.emit(editedUser);
   }
+
   onUserAdd() {
     const addUser: User = {
       name: this.editedUser.name,
@@ -54,7 +60,6 @@ export class ModalComponent {
     }
     console.log(addUser)
     this.userAdded.emit(addUser);
-   
   }
 }
 

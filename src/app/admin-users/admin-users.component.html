@@ -2,10 +2,11 @@
   <p id="title">Empleados</p>
   <button (click)="openModal(newUser)">Agregar empleado</button>
   <app-modal
-    [isVisible]="isModalVisible"
+    [isVisible]="isEditModalVisible || isAddModalVisible"
     [user]="selectedUser"
     (close)="closeModal()"
     (userAdded)="agregarUsuario($event)"
+    (userEdited)="reciboUsuario($event)"
   >
   </app-modal>
   <div class="card-orders">
@@ -14,13 +15,6 @@
       <p>email: {{ user.email }}</p>
       <p>rol:{{ user.rol }}</p>
       <button (click)="openModal(user)">Editar</button>
-      <app-modal
-        [isVisible]="isModalVisible"
-        [user]="selectedUser"
-        (close)="closeModal()"
-        (userEdited)="reciboUsuario($event)"
-      >
-      </app-modal>
       <button (click)="eliminarUsuario(user.id)">Borrar</button>
     </div>
   </div>

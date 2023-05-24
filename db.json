@@ -100,8 +100,8 @@
   "users": [
     {
       "name": "Danny",
-      "email": "daniel@bq.com",
-      "rol": "cocina",
+      "email": "danny@bq.com",
+      "rol": "mesero",
       "id": "tXFpHme",
       "password": "$2a$10$sd25m634dL8wDf4GKbtHB.prYrr9wWdPuWd3zCOFDeeNtMrFxyoD."
     },
@@ -125,6 +125,34 @@
       "rol": "administrador",
       "id": "OFV33DV",
       "name": "Juliana"
+    },
+    {
+      "email": "cris@bq.com",
+      "password": "$2a$10$FjXPmOnby.OvQGVm4dhVAOUKVl3yjmTSIEqBtsXLHrq/yDJq3JnwC",
+      "name": "Cristina",
+      "rol": "cocina",
+      "id": "lMfNyoe"
+    },
+    {
+      "email": "carmen@bq.com",
+      "password": "$2a$10$o9bW8WX3x.CASeFe.AMC0ukEXUQ/9qirmm6FWUCWHe92RK5dRUgZi",
+      "name": "Carmen",
+      "rol": "administrador",
+      "id": "NB4D9Dz"
+    },
+    {
+      "email": "ana@bq.com",
+      "password": "$2a$10$d9kCR4N1pleXr7khBsO5S.ohsRpKjHMbV8cS2jt.W4M9cO1pDgN7y",
+      "name": "Ana",
+      "rol": "cocina",
+      "id": "9JxXXtl"
+    },
+    {
+      "email": "ale@bq.com",
+      "password": "$2a$10$ylNNhltlDf2/ZJC9x6SzjuCAEmwNGzMPxxUgKf7Q8s6GSn9cGyx.e",
+      "name": "Ale",
+      "rol": "cocina",
+      "id": "qwB2lNb"
     }
   ],
   "orders": [
