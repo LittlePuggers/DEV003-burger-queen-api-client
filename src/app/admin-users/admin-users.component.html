@@ -1,18 +1,26 @@
+<nav>
+  <span (click)="showProducts()">Productos</span>
+</nav>
 <main>
-    <p id="title">Empleados</p>
-    <button id="add-button" (click)="openModal(newUser)">Agregar empleado</button>
-    <app-modal [isVisible]="isEditModalVisible || isAddModalVisible" [user]="selectedUser" (close)="closeModal()"
-        (userAdded)="agregarUsuario($event)" (userEdited)="reciboUsuario($event)">
-    </app-modal>
-    <div class="card-orders">
-        <div *ngFor="let user of users" class="card-order">
-            <p>Empleado: {{ user.name }}</p>
-            <p>Email: {{ user.email }}</p>
-            <p>Rol: {{ user.rol }}</p>
-            <div class="fila">
-                <button (click)="openModal(user)">Editar</button>
-                <button (click)="eliminarUsuario(user.id)">Borrar</button>
-            </div>
-        </div>
+  <p id="title">Empleados</p>
+  <button id="add-button" (click)="openModal(newUser)">Agregar empleado</button>
+  <app-modal
+    [isVisible]="isEditModalVisible || isAddModalVisible"
+    [user]="selectedUser"
+    (close)="closeModal()"
+    (userAdded)="agregarUsuario($event)"
+    (userEdited)="reciboUsuario($event)"
+  >
+  </app-modal>
+  <div class="card-orders">
+    <div *ngFor="let user of users" class="card-order">
+      <p>Empleado: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Rol: {{ user.rol }}</p>
+      <div class="fila">
+        <button (click)="openModal(user)">Editar</button>
+        <button (click)="eliminarUsuario(user.id)">Borrar</button>
+      </div>
     </div>
+  </div>
 </main>

@@ -1,0 +1,29 @@
+<nav>
+  <span (click)="showUsers()">Empleados</span>
+</nav>
+<main>
+  <p id="title">Productos</p>
+  <button id="add-button" (click)="openModal(newProduct)">
+    Agregar producto
+  </button>
+  <app-modal-products
+    [isVisible]="isEditModalVisible || isAddModalVisible"
+    [product]="selectedProduct"
+    (close)="closeModal()"
+    (productAdded)="agregarProducto($event)"
+    (productEdited)="editarProducto($event)"
+  >
+  </app-modal-products>
+  <div class="card-orders">
+    <div *ngFor="let product of products" class="card-order">
+      <img src="{{ product.image }}" />
+      <p>{{ product.name }}</p>
+      <p>Precio: ${{ product.price }}</p>
+      <p>Tipo: {{ product.type }}</p>
+      <div class="fila">
+        <button (click)="openModal(product)">Editar</button>
+        <button (click)="eliminarProducto(product.id)">Borrar</button>
+      </div>
+    </div>
+  </div>
+</main>

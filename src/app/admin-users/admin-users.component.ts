@@ -2,15 +2,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { User } from '../interfaces/user';
 import { EditedUser } from '../interfaces/editedUser'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-users',
   templateUrl: './admin-users.component.html',
   styleUrls: ['./admin-users.component.css']
 })
+
 export class AdminUsersComponent {
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private router: Router) { }
+  
   userService: any;
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef) { }
   users: any[] = []
   api: string = 'http://localhost:3000/users';
 
@@ -95,5 +98,9 @@ export class AdminUsersComponent {
       this.closeModal()
 
     }
+  }
+
+  showProducts(){
+    this.router.navigate(['/adminProducts'])
   }
 }
