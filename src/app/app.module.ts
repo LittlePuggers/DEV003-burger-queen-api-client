@@ -17,6 +17,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { CookedOrdersComponent } from './cooked-orders/cooked-orders.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { ModalComponent } from './modal/modal.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { ModalProductsComponent } from './modal-products/modal-products.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ModalComponent } from './modal/modal.component';
     FilterPipe,
     CookedOrdersComponent,
     AdminUsersComponent,
-    ModalComponent
+    ModalComponent,
+    AdminProductsComponent,
+    ModalProductsComponent
   ],
   imports: [
     BrowserModule,

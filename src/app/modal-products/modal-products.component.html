@@ -1,0 +1,33 @@
+<div class="modal" *ngIf="isVisible">
+  <div class="modal-content">
+    <span class="close" (click)="onClose()">&times;</span>
+    <p>Información del producto</p>
+    <label *ngIf="editedProduct.id">
+      Id:
+      <input [(ngModel)]="editedProduct.id" readonly />
+    </label>
+    <label>
+      Nombre:
+      <input [(ngModel)]="editedProduct.name" />
+    </label>
+    <label>
+      Precio:
+      <input [(ngModel)]="editedProduct.price" />
+    </label>
+    <label>
+      Tipo:
+      <input [(ngModel)]="editedProduct.type" />
+    </label>
+    <label>
+      Imagen:
+      <input [(ngModel)]="editedProduct.image" />
+    </label>
+
+    <button *ngIf="editedProduct.id" (click)="onProductEdit()">
+      Confirmar cambios
+    </button>
+    <button *ngIf="!editedProduct.id" (click)="onProductAdd()">
+      Crear producto
+    </button>
+  </div>
+</div>

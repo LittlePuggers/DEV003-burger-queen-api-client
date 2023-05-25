@@ -60,7 +60,7 @@ main {
 .card-order {
   background-color: white;
   width: 20vw;
-  height: 25vh;
+  height: 30vh;
   margin: 10vh 10px;
   padding: 10px;
   border-radius: 5%;
@@ -68,9 +68,9 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  align-items: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
+  font-size: 0.8em;
   line-height: 1.5em;
 }
 
@@ -89,11 +89,19 @@ main {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
   border: 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 400;
 }
 
 .fila :nth-child(2) {
   background-color: #a32f04;
   color: white;
+}
+
+img {
+  height: 88px;
+  width: 88px;
+  margin-top: 40px;
+  /* margin-left: 67px; */
+  margin-bottom: 10px;
 }
