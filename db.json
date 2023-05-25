@@ -6,15 +6,15 @@
       "price": 10,
       "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/ed1d929983097638eec152cb0fa238abd2582d54/src/assets/products-images/sandwich-jam%C3%B3n-y-queso.jpeg",
       "type": "Desayuno",
-      "dateEntry": "2022-03-05 15:14:10"
+      "dateEntry": "5/25/2023, 12:58:38 PM"
     },
     {
       "id": 7450,
       "name": "Café americano",
-      "price": "7",
+      "price": 10,
       "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-americano.jpeg",
       "type": "Desayuno",
-      "dateEntry": "5/25/2023, 10:05:21 AM"
+      "dateEntry": "5/25/2023, 12:54:00 PM"
     },
     {
       "name": "Café con leche",
@@ -149,26 +149,95 @@
       "id": 8
     },
     {
-      "email": "qwe@qwe.com",
-      "password": "$2a$10$r4txnEgumUNGbMTJgBMyvedQQ.XB/JCGzJCUMgM9Gz0V1FVVftuU2",
-      "name": "qwe",
-      "rol": "qwe",
+      "email": "a@bq.com",
+      "password": "$2a$10$ElDXrhK1eA0EiVwK2uOife6DfOUqrade/ma3fDmQ9rhjd3QLQuQ.q",
+      "name": "Dolores",
+      "rol": "cocina",
       "id": 9
-    },
-    {
-      "email": "qwe2@qwe.com",
-      "password": "$2a$10$VuJPfg9wAVgMmYGQoxNy/ufvVgvjrd1yF/TCy29VlsrA3zb9a3c/G",
-      "name": "qwe2",
-      "rol": "qwe",
-      "id": 10
-    },
-    {
-      "email": "qwe21@qwe.com",
-      "password": "$2a$10$G2dSrpf7PKJECNFLeDfWNO1vesYFuy84oIzonXRyrjZCOVa.860Ue",
-      "name": "qwe21",
-      "rol": "qwe",
-      "id": 11
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": 1,
+      "userId": "7",
+      "client": "Mari",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa simple",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-simple.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7453
+          },
+          "totalPrice": 10
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 7450,
+            "name": "Café americano",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-americano.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "5/25/2023, 12:54:00 PM"
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 20,
+      "status": "Entregado",
+      "dataEntry": "2023-05-25T19:54:41.527Z",
+      "timer": 0,
+      "entryTime": "2023-05-25T19:54:04.637Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    },
+    {
+      "id": 2,
+      "userId": "7",
+      "client": "David",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/hamburguesa-doble.jpeg",
+            "type": "Resto del día",
+            "dateEntry": "2023-04-26 15:14:10",
+            "id": 7454
+          },
+          "totalPrice": 15
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 7450,
+            "name": "Café americano",
+            "price": 10,
+            "image": "https://raw.githubusercontent.com/LittlePuggers/DEV003-burger-queen-api-client/main/src/assets/products-images/caf%C3%A9-americano.jpeg",
+            "type": "Desayuno",
+            "dateEntry": "5/25/2023, 12:54:00 PM"
+          },
+          "totalPrice": 10
+        }
+      ],
+      "total": 25,
+      "status": "Pendiente",
+      "dataEntry": "2023-05-25T19:56:22.105Z",
+      "timer": 0,
+      "entryTime": "2023-05-25T19:56:14.379Z",
+      "timerSubscription": {
+        "closed": false,
+        "_parentage": null,
+        "_finalizers": null
+      }
+    }
+  ]
 }

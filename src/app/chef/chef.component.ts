@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { Order } from '../interfaces/orden';
 import { HttpClient } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-chef',
@@ -10,7 +11,7 @@ import { interval, Subscription } from 'rxjs';
 })
 
 export class ChefComponent {
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef) {}
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private authService: AuthService) {}
 
   api: string = 'http://localhost:3000/orders';
   orders: Order[] = []
@@ -80,7 +81,9 @@ export class ChefComponent {
     }
   }
 
-  
+  handleLogout(){
+    this.authService.logout()
+  }
 
 }
 
