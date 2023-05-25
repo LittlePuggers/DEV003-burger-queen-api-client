@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Order } from '../interfaces/orden';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-cooked-orders',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class CookedOrdersComponent {
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private router: Router) {}
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private router: Router, private authService: AuthService) {}
 
   api: string = 'http://localhost:3000/orders';
   orders: Order[] = []
@@ -43,4 +44,7 @@ export class CookedOrdersComponent {
     this.router.navigate(['/waiter'])
   }
 
+  handleLogout(){
+    this.authService.logout()
+  }
 }

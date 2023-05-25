@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { User } from '../interfaces/user';
 import { EditedUser } from '../interfaces/editedUser'
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-admin-users',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class AdminUsersComponent {
-  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private router: Router) { }
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef, private router: Router, private authService: AuthService) { }
   
   userService: any;
   users: any[] = []
@@ -102,5 +103,9 @@ export class AdminUsersComponent {
 
   showProducts(){
     this.router.navigate(['/adminProducts'])
+  }
+
+  handleLogout(){
+    this.authService.logout()
   }
 }

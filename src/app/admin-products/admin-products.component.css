@@ -10,11 +10,21 @@ nav {
 
 span {
   margin: 10px;
+  margin-top: 20px;
+  margin-right: 30px;
   font-family: "Montserrat", sans-serif;
   border: 2px solid black;
   border-radius: 5px;
   padding: 5px;
   background-color: white;
+}
+
+.logout {
+  height: 45px;
+  width: 45px;
+  margin: 0;
+  margin-top: 8px;
+  margin-right: 10px;
 }
 
 main {

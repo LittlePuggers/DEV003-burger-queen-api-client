@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { OrderComponent } from 'src/app/order/order.component';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-waiter',
@@ -33,7 +34,7 @@ export class WaiterComponent {
   @Output() clearClient = new EventEmitter<void>();
   @ViewChild(OrderComponent) orderComponent!: OrderComponent;
 
-  constructor(private http: HttpClient, private router: Router) { 
+  constructor(private http: HttpClient, private router: Router, private authService: AuthService) { 
     
   }
   
@@ -154,6 +155,10 @@ export class WaiterComponent {
   
   showCookedOrders(){
     this.router.navigate(['/cookedOrders'])
+  }
+
+  handleLogout(){
+    this.authService.logout()
   }
 }
 
