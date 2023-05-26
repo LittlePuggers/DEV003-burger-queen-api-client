@@ -143,4 +143,4 @@ Vista del mesero para tomar la orden del cliente de nuestro primer prototipo de 
 
 ## 4 . Tecnologías:
 
-`HTML` `CSS` `JavaScript` `Angular` `TypeScript`
+`HTML` `CSS` `Angular` `TypeScript`
