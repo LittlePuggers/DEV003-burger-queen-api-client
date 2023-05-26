@@ -134,11 +134,25 @@ Vista del mesero para tomar la orden del cliente de nuestro primer prototipo de 
 
 ![Empleados](src/assets/readme-content/admin-empleados.png)
 
+<center>Vista del modal para agregar empleados Usuario: Administrador</center>
+
+![Agrega empleado](src/assets/readme-content/agrega-empleado.png)
+
+<center>Vista del modal para editar información de los empleados Usuario: Administrador</center>
+
+![Edita empleado](src/assets/readme-content/edita-empleado.png)
 
 <center>Vista de listado de productos Usuario: Administrador</center>
 
-![Empleados](src/assets/readme-content/admin-productos.png)
+![Productos](src/assets/readme-content/admin-productos.png)
 
+<center>Vista del modal para agregar productos Usuario: Administrador</center>
+
+![Agrega producto](src/assets/readme-content/agrega-producto.png)
+
+<center>Vista del modal para editar información de los productos Usuario: Administrador</center>
+
+![Edita producto](src/assets/readme-content/edita-producto.png)
 ***
 
 ## 4 . Tecnologías:
