@@ -154,6 +154,20 @@
       "name": "Dolores",
       "rol": "cocina",
       "id": 9
+    },
+    {
+      "email": "s@bq.com",
+      "password": "$2a$10$1LKqJEtlHZYbTyrPZxWQzeqkljGvzjOTzOJ7C3cUnhUEqC4z1QUWS",
+      "name": "sara",
+      "rol": "mesero",
+      "id": 10
+    },
+    {
+      "email": "sara@bq.com",
+      "password": "$2a$10$8Pnn0RpXwn7Hoilu1odK6.J191dp5nnw7n7ViM3qVOAoCRy6SBn96",
+      "name": "sara",
+      "rol": "mesero",
+      "id": 11
     }
   ],
   "orders": [
