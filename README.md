@@ -52,7 +52,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 #### **El Mesero debe poder ingresar al sistema si el admininstrador ya le ha asignado credenciales**  
 
 #### **Criterios de aceptación**
-
 * Acceder a una pantalla de login.
 * Ingresar email y contraseña.
 * Recibir mensajes de error comprensibles, dependiendo de cuál es el error con la información ingresada.
@@ -62,7 +61,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 #### **El mesero debe poder tomar pedido del cliente**
 
 #### **Criterios de aceptación**  
-
 * Anotar nombre de cliente.
 * Agregar productos al pedido.
 * Eliminar productos.
@@ -73,7 +71,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 #### **El jefe de cocina debe ver los pedidos**  
 
 #### **Criterios de aceptación**
-
 * Ver los pedidos ordenados según se van haciendo.
 * Marcar los pedidos que se han preparado y están listos para servirse.
 * Ver el tiempo que tomó prepara el pedido desde que llegó hasta que se marcó como completado.
@@ -82,7 +79,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 #### **El mesero debe ver pedidos listos para servir**
 
 #### **Criterios de aceptación**
-
 * Ver listado de pedido listos para servir.
 * Marcar pedidos que han sido entregados.
 
@@ -90,7 +86,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 #### **El administrador debe gestionar la información de los trabajadores**
 
 #### **Criterios de aceptación**
-
 * Ver listado de trabajadores.
 * Agregar trabajadores.
 * Eliminar trabajadores.
@@ -98,7 +93,6 @@ Además, el cliente nos ha dado documentación que especifica el comportamiento 
 
 ### **Historia de usuario 6**
 #### **El administrador debe gestionar la información de los productos** 
-
 #### **Criterios de aceptación**
 
 * Ver listado de productos.
